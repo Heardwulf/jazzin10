@@ -69,7 +69,7 @@
    <script>
       $(document).ready(function(){
          var trueIndex = 0;
-         
+
          function getTracks(trueIndex) {
             $.getJSON('tracks.json', function (data) {
             /* empty elements between loads */
@@ -86,8 +86,8 @@
             $("#artist").append(data[trueIndex].artist);
             $("#style").append(data[trueIndex].style);
             $("#instrumentation").append(data[trueIndex].instrumentation);
-            $("#audio1").attr("src", "../samples/" + data[trueIndex].audio1);
-            $("#audio1link").attr("href", "../samples/" + data[trueIndex].audio1);
+            $("#audio1").attr("src", "/jazzin10/samples/" + data[trueIndex].audio1);
+            $("#audio1link").attr("href", "/jazzin10/samples/" + data[trueIndex].audio1);
             $("#audio1link").append(data[trueIndex].audio1);
             $("#audio2").attr("href", "../samples/" + data[trueIndex].audio2);
             if (data[trueIndex].audio2 == null) {

@@ -27,8 +27,14 @@ h2.display-4 {
 .smidge {
     margin-bottom: 96px !important;
 }
+.smudge {
+    margin-bottom: 48px !important;
+}
 audio + audio {
     margin-top: 2em;
+}
+progress {
+    width: 100%;
 }
 /* Body styles
 Bebop   bg-primary text-white

@@ -1,0 +1,18 @@
+[
+    {
+      "track": "Salt Peanuts",
+      "artist": "Dizzy Gillespie & His All Stars (with Charlie Parker)",
+      "style": "Bebop",
+      "instrumentation": "Trumpet, Alto Sax, Piano, Bass, and Drums",
+      "audio1" : "01_bebop-a.mp3",
+      "audio2" : "null"
+    },
+    {
+      "track": "Ko-ko",
+      "artist": "Charlie Parker & His Re-boppers (with Dizzy Gillespie)",
+      "style": "Bebop",
+      "instrumentation": "Alto Sax, Trumpet, Piano, Bass, and Drums",
+      "audio1" : "02_bebop-b.mp3",
+      "audio2" : "null"
+    }
+    ]

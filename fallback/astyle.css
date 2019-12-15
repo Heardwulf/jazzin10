@@ -10,3 +10,12 @@ audio {
 h2 {
     text-align: center;;
 }
+/* Body styles
+Bebop   bg-primary text-white
+Cool    bg-secondary text-white
+Hard    bg-success text-white
+Free    bg-danger text-white
+Mains   bg-warning text-dark
+Fusion  bg-info text-white
+Post    bg-light text-dark
+*/

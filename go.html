@@ -1,0 +1,72 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Jazz in 10</title>
+   <meta name="author" content="John Earl Hardesty">
+   <meta name="description" content="Jazz listening guide flashcards.">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+   integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+   crossorigin="anonymous">
+   <script src="https://kit.fontawesome.com/72d05dde16.js" crossorigin="anonymous"></script>
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+   <!-- <link rel="stylesheet" href=""> -->
+   <style>
+      body {
+         color: black;
+      }
+   </style>
+</head> 
+
+<body> 
+   <div class="container">
+      <!-- <h1 class="display-4">Jazz in 10</h1>
+      <p class="lead">Ten seconds is all you need to recognize these tracks!</p>
+      <button type="button" class="btn btn-primary">Begin</button>
+      <h1>Salt Peanuts</h1>
+      <p>Dizzy Gillespie & His All Stars (with Charlie Parker)</p>
+      <p>Bebop</p>
+      <p>Trumpet, Alto Sax, Piano, Bass, and Drums</p>
+      <audio controls>
+            <source src="01_bebop-a.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+          </audio> -->
+      <div id="people"></div>
+   </div>
+
+<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script>
+         $(document).ready(function(){
+            /*$("button").click(function(){
+                  $.ajax({url: "demo_ajax_script.js", dataType: "script"});
+            }); */
+            
+            //var outer = data.outer;
+            var trueIndex = 0;
+            
+            $.getJSON("tracks.json", function(results){
+                  for (var trueIndex = 0; trueIndex < results.length; trueIndex++){
+                     $("div#people").append("<p>");
+                     $.each(results[trueIndex], function(i, field){
+                        $("div#people").append("<span>" + i + "</span>" + ": " + field + "<br>");
+                     });
+                     $("div#people").append("<br></p>");
+                  };
+            });
+            $.getJSON('tracks.json', function (data) {
+               // Work with your JSON data here..
+               console.log(data[0].track);
+            });
+         });
+      </script>
+  </body>
+</body> 
+</html>

@@ -32,7 +32,23 @@
             <source src="01_bebop-a.mp3" type="audio/mpeg">
           Your browser does not support the audio element.
           </audio> -->
-      <div id="people"></div>
+
+      <!-- <div id="people"></div> -->
+      <h1 id="track"></h1>
+      <p id="artist"></p>
+      <p id="style"></p>
+      <p id="instrumentation"></p>
+      <p id="audio1"></p>
+      <p id="audio2"></p>
+      <button id="prev">&lt; Previous</button>
+      <button id="next">Next &gt;</button>
+      <nav class="navbar fixed-bottom navbar-light bg-light">
+         <form class="form-inline">
+            <button id="prev" class="btn btn-outline-success" type="button"><i class="fas fa-arrow-alt-circle-left"></i> Previous</button>
+            <button id="next" class="btn btn-outline-secondary float-right" type="button">Next <i class="fas fa-arrow-alt-circle-right"></i></button>
+          </form>
+
+      </nav>
    </div>
 
 <!-- Optional JavaScript -->
@@ -61,9 +77,24 @@
                      $("div#people").append("<br></p>");
                   };
             });
+            $("#prev").click(function(){
+               if (trueIndex != 0) {
+                  trueIndex--;
+               }
+            });
+            $("#next").click(function(){
+               if (trueIndex != 30)
+               trueIndex++;
+            });
             $.getJSON('tracks.json', function (data) {
                // Work with your JSON data here..
-               console.log(data[0].track);
+               $("#track").append(data[trueIndex].track);
+               $("#artist").append(data[trueIndex].artist);
+               $("#style").append(data[trueIndex].style);
+               $("#instrumentation").append(data[trueIndex].instrumentation);
+               $("#audio1").append(data[trueIndex].audio1);
+               $("#audio2").append(data[trueIndex].audio2);
+               //console.log(data[0].track);
             });
          });
       </script>

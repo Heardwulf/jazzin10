@@ -44,9 +44,14 @@
                </div>
              </div>
             <!--<button type="button" class="btn btn-secondary">2</button>-->
-            <a href="01.html" class="btn btn-dark justify-content-end"  role="button">Next <i class="fas fa-arrow-alt-circle-right"></i></a>
+
+            <a href="01.html" class="btn btn-dark justify-content-end"  role="button" id="next">Next <i class="fas fa-arrow-alt-circle-right"></i></a>
          </div>
       </nav>
+      <audio id="preplayer" style="display: none;">
+         <source src="../samples/01_bebop-a.mp3" type="audio/mpeg">
+         Your browser does not support the audio element.
+      </audio>
    </div>
 
 <!-- Optional JavaScript -->
@@ -57,6 +62,12 @@
    <script>
       $(document).ready(function(){
          // Code here if you could figure out dynamically loading HTML5 audio sigh
+
+      });
+      var audio = document.getElementById('preplayer');
+      var nextPage = document.getElementById('next');
+      nextPage.addEventListener('click',function(){
+         audio.play();
       });
       </script>
   </body>

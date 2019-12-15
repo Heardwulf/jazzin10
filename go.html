@@ -28,7 +28,7 @@
       <p>Dizzy Gillespie & His All Stars (with Charlie Parker)</p>
       <p>Bebop</p>
       <p>Trumpet, Alto Sax, Piano, Bass, and Drums</p>
-      <audio controls>
+      <audio controls autoplay>
             <source src="01_bebop-a.mp3" type="audio/mpeg">
           Your browser does not support the audio element.
           </audio> -->
@@ -38,8 +38,15 @@
       <p id="artist"></p>
       <p id="style"></p>
       <p id="instrumentation"></p>
-      <p id="audio1"></p>
-      <p id="audio2"></p>
+      <audio controls autoplay>
+         <source id="audio1" src="default.mp3" type="audio/mpeg">
+         Your browser does not support the audio element.
+      </audio>
+      <br>
+      <audio id="audio2controls" controls>
+         <source id="audio2" src="default.mp3" type="audio/mpeg">
+       Your browser does not support the audio element.
+      </audio>
       <nav class="navbar fixed-bottom navbar-light bg-light">
          <form class="form-inline">
             <button id="prev" class="btn btn-outline-success" type="button"><i class="fas fa-arrow-alt-circle-left"></i> Previous</button>
@@ -79,8 +86,13 @@
                $("#artist").append(data[trueIndex].artist);
                $("#style").append(data[trueIndex].style);
                $("#instrumentation").append(data[trueIndex].instrumentation);
-               $("#audio1").append(data[trueIndex].audio1);
-               $("#audio2").append(data[trueIndex].audio2);
+               $("#audio1").attr("src", data[trueIndex].audio1);
+               $("#audio2").attr("src", data[trueIndex].audio2);
+               if (!data[trueIndex].audio2) {
+                  $("audio2controls").hide();
+               } else {
+                  $("audio2controls").show();
+               }
                });
             };
 

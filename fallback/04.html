@@ -14,20 +14,30 @@
    <link rel="stylesheet" href="astyle.css">
 </head> 
 
-<body class="text-white bg-primary"> 
+<body class="text-white bg-primary">
+   <div class="progress">
+      <div class="progress-bar progress-bar-striped bg-dark" role="progressbar" style="width: 12.5%;" aria-valuenow="12.5" aria-valuemin="0" aria-valuemax="100"></div>
+   </div>
    <div class="container">
       <h1 class="display-4">Tempus Fugue-It</h1>
       <p class="lead"><i class="fas fa-user"></i> Bud Powell</p>
       <p><i class="fas fa-drum"></i> Piano, Bass, and Drums</p>
-      <h2>Bebop</h2>
+      <h2 class="display-4"><i class="fas fa-music"></i> Bebop</h2>
       <br>
       <br>
-      <div class="row justify-content-center">
+      <nav class="smidge navbar fixed-bottom navbar-light justify-content-center">
          <audio controls autoplay>
             <source src="../samples/04_bebop-d.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
          </audio>
-      </div>
+         <!-- use for alternate sample -->
+         <!--
+         <audio controls>
+            <source src="../samples/02_bebop-b.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+         </audio>
+         -->
+      </nav>
       <nav class="navbar fixed-bottom navbar-dark bg-dark justify-content-center">
          <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
             <a href="03.html" class="btn btn-light" role="button"><i class="fas fa-arrow-alt-circle-left"></i> Back</a>
@@ -59,7 +69,6 @@
       $(document).ready(function(){
          // Code here if you could figure out dynamically loading HTML5 audio sigh
       });
-      </script>
-  </body>
-</body> 
+   </script>
+</body>
 </html>

@@ -14,20 +14,30 @@
    <link rel="stylesheet" href="astyle.css">
 </head> 
 
-<body class="text-white bg-primary"> 
+<body class="text-white bg-primary">
+   <div class="progress">
+      <div class="progress-bar progress-bar-striped bg-dark" role="progressbar" style="width: 9.375%;" aria-valuenow="9.375" aria-valuemin="0" aria-valuemax="100"></div>
+   </div>
    <div class="container">
-      <h1 class="display-4">Manteca</h1>
-      <p class="lead"><i class="fas fa-user"></i> Dizzy Gillespie and his Orchestra</p>
+      <h1 class="display-4">Manteca</h1> 
+      <p class="lead"><i class="fas fa-user"></i> Dizzy Gillespie Big Band</p>
       <p><i class="fas fa-drum"></i> Saxes, Trumpets, Trombones, Piano, Bass, Drums, and Congas</p>
-      <h2>Bebop</h2>
+      <h2 class="display-4"><i class="fas fa-music"></i> Bebop</h2>
       <br>
       <br>
-      <div class="row justify-content-center">
+      <nav class="smidge navbar fixed-bottom navbar-light justify-content-center">
          <audio controls autoplay>
             <source src="../samples/03_bebop-c.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
          </audio>
-      </div>
+         <!-- use for alternate sample -->
+         <!--
+         <audio controls>
+            <source src="../samples/02_bebop-b.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+         </audio>
+         -->
+      </nav>
       <nav class="navbar fixed-bottom navbar-dark bg-dark justify-content-center">
          <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
             <a href="02.html" class="btn btn-light" role="button"><i class="fas fa-arrow-alt-circle-left"></i> Back</a>
@@ -59,7 +69,6 @@
       $(document).ready(function(){
          // Code here if you could figure out dynamically loading HTML5 audio sigh
       });
-      </script>
-  </body>
-</body> 
+   </script>
+</body>
 </html>

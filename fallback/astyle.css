@@ -20,8 +20,9 @@ h2 {
     text-align: left;
 }
 h2.display-4 {
-    font-size: 18pt;
+    font-size: 16pt;
     font-style: italic;
+    font-weight: 400;
 }
 .smidge {
     margin-bottom: 96px !important;

@@ -59,74 +59,76 @@
    </div>
 
 <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script>
-         $(document).ready(function(){
-            /*$("button").click(function(){
-                  $.ajax({url: "demo_ajax_script.js", dataType: "script"});
-            }); */
-            
-            //var outer = data.outer;
-            var trueIndex = 0;
-            function getTracks(trueIndex) {
-               $.getJSON('tracks.json', function (data) {
-               /* empty elements between loads */
-               $("#track").empty();
-               $("#artist").empty();
-               $("#style").empty();
-               $("#instrumentation").empty();
-               $("#audio1").empty();
-               $("#audio2").empty();
-               /* append JSON index key value pair to elements */
-               $("#track").append(data[trueIndex].track);
-               $("#artist").append(data[trueIndex].artist);
-               $("#style").append(data[trueIndex].style);
-               $("#instrumentation").append(data[trueIndex].instrumentation);
-               $("#audio1").attr("src", "samples/" + data[trueIndex].audio1);
-               $("#audio1link").attr("src", "samples/" + data[trueIndex].audio1);
-               $("#audio1link").append(data[trueIndex].audio1);
-               $("#audio2").attr("src", "samples/" + data[trueIndex].audio2);
-               if (data[trueIndex].audio2 != null) {
-                  $("audio2controls").hide();
-               } else {
-                  $("audio2controls").show();
-               }
-               });
-            };
+   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+   <script
+   src="https://code.jquery.com/jquery-3.4.1.min.js"
+   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+   crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+   <script>
+      $(document).ready(function(){
+         /*$("button").click(function(){
+               $.ajax({url: "demo_ajax_script.js", dataType: "script"});
+         }); */
+         
+         //var outer = data.outer;
+         var trueIndex = 0;
+         function getTracks(trueIndex) {
+            $.getJSON('tracks.json', function (data) {
+            /* empty elements between loads */
+            $("#track").empty();
+            $("#artist").empty();
+            $("#style").empty();
+            $("#instrumentation").empty();
+            $("#audio1").empty();
+            $("#audio1link").empty();
+            $("#audio2").empty();
+            $("#audio2link").empty();
+            /* append JSON index key value pair to elements */
+            $("#track").append(data[trueIndex].track);
+            $("#artist").append(data[trueIndex].artist);
+            $("#style").append(data[trueIndex].style);
+            $("#instrumentation").append(data[trueIndex].instrumentation);
+            $("#audio1").attr("src", "samples/" + data[trueIndex].audio1);
+            $("#audio1link").attr("src", "samples/" + data[trueIndex].audio1);
+            $("#audio1link").append(data[trueIndex].audio1);
+            $("#audio2").attr("src", "samples/" + data[trueIndex].audio2);
+            if (data[trueIndex].audio2 == null) {
+               $("audio2controls").hide();
+            } else {
+               $("audio2controls").show();
+            }
+            });
+         };
 
-            getTracks(trueIndex);
+         getTracks(trueIndex);
 
-            $.getJSON("tracks.json", function(results){
-                  for (var trueIndex = 0; trueIndex < results.length; trueIndex++){
-                     $("div#people").append("<p>");
-                     $.each(results[trueIndex], function(i, field){
-                        $("div#people").append("<span>" + i + "</span>" + ": " + field + "<br>");
-                     });
-                     $("div#people").append("<br></p>");
-                  };
-            });
-            $("#prev").click(function(){
-               if (trueIndex != 0) {
-                  trueIndex--;
-               } else if (!trueIndex) {
-                  trueIndex = 0;
-               }
-               getTracks(trueIndex);
-            });
-            $("#next").click(function(){
-               if (trueIndex != 30) {
-                  trueIndex++;
-               }
-               getTracks(trueIndex);
-            });
-            
+         $.getJSON("tracks.json", function(results){
+               for (var trueIndex = 0; trueIndex < results.length; trueIndex++){
+                  $("div#people").append("<p>");
+                  $.each(results[trueIndex], function(i, field){
+                     $("div#people").append("<span>" + i + "</span>" + ": " + field + "<br>");
+                  });
+                  $("div#people").append("<br></p>");
+               };
          });
+         $("#prev").click(function(){
+            if (trueIndex != 0) {
+               trueIndex--;
+            } else if (!trueIndex) {
+               trueIndex = 0;
+            }
+            getTracks(trueIndex);
+         });
+         $("#next").click(function(){
+            if (trueIndex != 30) {
+               trueIndex++;
+            }
+            getTracks(trueIndex);
+         });
+         
+      });
       </script>
   </body>
 </body> 

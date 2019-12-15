@@ -33,8 +33,9 @@ h2.display-4 {
 audio + audio {
     margin-top: 2em;
 }
-progress {
+.progress {
     width: 100%;
+    height: 5px !important;
 }
 /* Body styles
 Bebop   bg-primary text-white

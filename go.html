@@ -83,8 +83,9 @@
                }
             });
             $("#next").click(function(){
-               if (trueIndex != 30)
-               trueIndex++;
+               if (trueIndex != 30) {
+                  trueIndex++;
+               }
             });
             $.getJSON('tracks.json', function (data) {
                // Work with your JSON data here..

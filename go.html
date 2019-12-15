@@ -67,7 +67,19 @@
             
             //var outer = data.outer;
             var trueIndex = 0;
-            
+            function getTracks(trueIndex) {
+               $.getJSON('tracks.json', function (data) {
+               // Work with your JSON data here..
+               $("#track").append(data[trueIndex].track);
+               $("#artist").append(data[trueIndex].artist);
+               $("#style").append(data[trueIndex].style);
+               $("#instrumentation").append(data[trueIndex].instrumentation);
+               $("#audio1").append(data[trueIndex].audio1);
+               $("#audio2").append(data[trueIndex].audio2);
+               //console.log(data[0].track);
+               });
+            }
+
             $.getJSON("tracks.json", function(results){
                   for (var trueIndex = 0; trueIndex < results.length; trueIndex++){
                      $("div#people").append("<p>");
@@ -81,22 +93,15 @@
                if (trueIndex != 0) {
                   trueIndex--;
                }
+               getTracks(trueIndex);
             });
             $("#next").click(function(){
                if (trueIndex != 30) {
                   trueIndex++;
                }
+               getTracks(trueIndex);
             });
-            $.getJSON('tracks.json', function (data) {
-               // Work with your JSON data here..
-               $("#track").append(data[trueIndex].track);
-               $("#artist").append(data[trueIndex].artist);
-               $("#style").append(data[trueIndex].style);
-               $("#instrumentation").append(data[trueIndex].instrumentation);
-               $("#audio1").append(data[trueIndex].audio1);
-               $("#audio2").append(data[trueIndex].audio2);
-               //console.log(data[0].track);
-            });
+            
          });
       </script>
   </body>

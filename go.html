@@ -91,9 +91,9 @@
             $("#style").append(data[trueIndex].style);
             $("#instrumentation").append(data[trueIndex].instrumentation);
             $("#audio1").attr("src", "samples/" + data[trueIndex].audio1);
-            $("#audio1link").attr("src", "samples/" + data[trueIndex].audio1);
+            $("#audio1link").attr("href", "samples/" + data[trueIndex].audio1);
             $("#audio1link").append(data[trueIndex].audio1);
-            $("#audio2").attr("src", "samples/" + data[trueIndex].audio2);
+            $("#audio2").attr("href", "samples/" + data[trueIndex].audio2);
             if (data[trueIndex].audio2 == null) {
                $("audio2controls").hide();
             } else {
@@ -104,15 +104,7 @@
 
          getTracks(trueIndex);
 
-         $.getJSON("tracks.json", function(results){
-               for (var trueIndex = 0; trueIndex < results.length; trueIndex++){
-                  $("div#people").append("<p>");
-                  $.each(results[trueIndex], function(i, field){
-                     $("div#people").append("<span>" + i + "</span>" + ": " + field + "<br>");
-                  });
-                  $("div#people").append("<br></p>");
-               };
-         });
+
          $("#prev").click(function(){
             if (trueIndex != 0) {
                trueIndex--;

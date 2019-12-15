@@ -11,6 +11,13 @@
    crossorigin="anonymous">
    <script src="https://kit.fontawesome.com/72d05dde16.js" crossorigin="anonymous"></script>
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+   <script>
+      var audio = document.getElementById('preplayer');
+      var nextPage = document.getElementById('next');
+      nextPage.addEventListener('click',function(){
+         audio.play();
+      });
+   </script>
    <!-- <link rel="stylesheet" href=""> -->
    <style>
       body {
@@ -64,11 +71,7 @@
          // Code here if you could figure out dynamically loading HTML5 audio sigh
 
       });
-      var audio = document.getElementById('preplayer');
-      var nextPage = document.getElementById('next');
-      nextPage.addEventListener('click',function(){
-         audio.play();
-      });
+ 
       </script>
   </body>
 </body> 

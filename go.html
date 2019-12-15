@@ -42,11 +42,13 @@
          <source id="audio1" src="samples/default.mp3" type="audio/mpeg">
          Your browser does not support the audio element.
       </audio>
+      <p><a id="audio1link" href=""></a></p>
       <br>
       <audio id="audio2controls" controls>
          <source id="audio2" src="samples/default.mp3" type="audio/mpeg">
        Your browser does not support the audio element.
       </audio>
+      <p><a id="audio2link" href=""></a></p>
       <nav class="navbar fixed-bottom navbar-light bg-light">
          <form class="form-inline">
             <button id="prev" class="btn btn-outline-success" type="button"><i class="fas fa-arrow-alt-circle-left"></i> Previous</button>
@@ -87,6 +89,8 @@
                $("#style").append(data[trueIndex].style);
                $("#instrumentation").append(data[trueIndex].instrumentation);
                $("#audio1").attr("src", "samples/" + data[trueIndex].audio1);
+               $("#audio1link").attr("src", "samples/" + data[trueIndex].audio1);
+               $("#audio1link").append(data[trueIndex].audio1);
                $("#audio2").attr("src", "samples/" + data[trueIndex].audio2);
                if (data[trueIndex].audio2 != null) {
                   $("audio2controls").hide();

@@ -22,9 +22,8 @@ h2 {
 h2.display-4 {
     font-size: 20pt;
 }
-.rowdown {
-    position: absolute;
-    bottom: 4rem;
+.smidge {
+    margin-bottom: 96px !important;
 }
 /* Body styles
 Bebop   bg-primary text-white

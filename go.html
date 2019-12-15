@@ -90,10 +90,10 @@
             $("#artist").append(data[trueIndex].artist);
             $("#style").append(data[trueIndex].style);
             $("#instrumentation").append(data[trueIndex].instrumentation);
-            $("#audio1").attr("src", "samples/" + data[trueIndex].audio1);
-            $("#audio1link").attr("href", "samples/" + data[trueIndex].audio1);
+            $("#audio1").attr("src", "../samples/" + data[trueIndex].audio1);
+            $("#audio1link").attr("href", "../samples/" + data[trueIndex].audio1);
             $("#audio1link").append(data[trueIndex].audio1);
-            $("#audio2").attr("href", "samples/" + data[trueIndex].audio2);
+            $("#audio2").attr("href", "../samples/" + data[trueIndex].audio2);
             if (data[trueIndex].audio2 == null) {
                $("audio2controls").hide();
             } else {

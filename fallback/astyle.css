@@ -6,9 +6,12 @@ html {
 body {
     
 }
-.btn {
+nav.bg-dark .btn {
     padding-left: 22px;
     padding-right: 22px;
+}
+nav.smidge .btn {
+    margin-top: 1em;
 }
 audio {
     width: 90%;
